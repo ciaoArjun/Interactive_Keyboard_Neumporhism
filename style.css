@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EFEEEE;
+  padding: 25vh 0;
+}
+body div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10vw;
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 2vmax;
+  font-family: Helvetica;
+  border: none;
+  background-color: #EFEEEE;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: -6px -6px 26px 0 rgba(255, 255, 255, 0.83), 6px 6px 16px 0 rgba(217, 210, 200, 0.51);
+  transition: color 0.2s ease-out;
+  animation: button-focus-out 0.2s ease-out forwards;
+  color: dimgray;
+  user-select: none;
+}
+button:focus {
+  outline: none;
+}
+button.pressed {
+  color: orangered;
+  animation: button-focus 0.2s ease-out forwards;
+  outline: none;
+}
+
+@keyframes button-focus {
+  0% {
+    box-shadow: -6px -6px 26px 0 rgba(255, 255, 255, 0.83), 6px 6px 16px 0 rgba(217, 210, 200, 0.51);
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: -6px -6px 16px 0 rgba(255, 255, 255, 0.83) inset, 6px 6px 6px 0 rgba(217, 210, 200, 0.51) inset;
+  }
+}
+@keyframes button-focus-out {
+  0% {
+    box-shadow: -6px -6px 16px 0 rgba(255, 255, 255, 0.83) inset, 6px 6px 6px 0 rgba(217, 210, 200, 0.51) inset;
+  }
+  50% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: -6px -6px 26px 0 rgba(255, 255, 255, 0.83), 6px 6px 16px 0 rgba(217, 210, 200, 0.51);
+  }
+}
